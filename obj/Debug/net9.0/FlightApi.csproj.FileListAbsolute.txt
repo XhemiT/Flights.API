@@ -35,3 +35,8 @@ C:\Users\DELL\OneDrive\Desktop\FlightBackend\FlightApi\obj\Debug\net9.0\FlightAp
 C:\Users\DELL\OneDrive\Desktop\FlightBackend\FlightApi\obj\Debug\net9.0\FlightApi.genruntimeconfig.cache
 C:\Users\DELL\OneDrive\Desktop\FlightBackend\FlightApi\obj\Debug\net9.0\ref\FlightApi.dll
 C:\Users\DELL\OneDrive\Desktop\FlightBackend\FlightApi\obj\Debug\net9.0\FlightApi.sourcelink.json
+C:\Users\DELL\OneDrive\Desktop\FlightBackend\FlightApi\bin\Debug\net9.0\flight-search-app\package-lock.json
+C:\Users\DELL\OneDrive\Desktop\FlightBackend\FlightApi\bin\Debug\net9.0\flight-search-app\package.json
+C:\Users\DELL\OneDrive\Desktop\FlightBackend\FlightApi\bin\Debug\net9.0\flight-search-app\public\manifest.json
+C:\Users\DELL\OneDrive\Desktop\FlightBackend\FlightApi\bin\Debug\net9.0\flight-search-app\build\asset-manifest.json
+C:\Users\DELL\OneDrive\Desktop\FlightBackend\FlightApi\bin\Debug\net9.0\flight-search-app\build\manifest.json
