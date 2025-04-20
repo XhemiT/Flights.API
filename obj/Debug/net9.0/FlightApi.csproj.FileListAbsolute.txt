@@ -34,3 +34,4 @@ C:\Users\DELL\OneDrive\Desktop\FlightBackend\FlightApi\obj\Debug\net9.0\refint\F
 C:\Users\DELL\OneDrive\Desktop\FlightBackend\FlightApi\obj\Debug\net9.0\FlightApi.pdb
 C:\Users\DELL\OneDrive\Desktop\FlightBackend\FlightApi\obj\Debug\net9.0\FlightApi.genruntimeconfig.cache
 C:\Users\DELL\OneDrive\Desktop\FlightBackend\FlightApi\obj\Debug\net9.0\ref\FlightApi.dll
+C:\Users\DELL\OneDrive\Desktop\FlightBackend\FlightApi\obj\Debug\net9.0\FlightApi.sourcelink.json
