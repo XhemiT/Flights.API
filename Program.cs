@@ -5,37 +5,23 @@ using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// 1. Swagger
+// 1) Add Swagger services
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>
 {
-    c.SwaggerDoc("v1", new OpenApiInfo { Title = "Flight API", Version = "v1" });
-});
-
-// 2. CORS
-builder.Services.AddCors(options =>
-{
-    options.AddDefaultPolicy(policy =>
-    {
-        policy.WithOrigins("http://localhost:3000")
-              .AllowAnyHeader()
-              .AllowAnyMethod();
-    });
+  c.SwaggerDoc("v1", new OpenApiInfo { Title = "Flight API", Version = "v1" });
 });
 
 var app = builder.Build();
 
-// 3. Middleware
-app.UseCors(); // vendos CORS këtu
-
+// 2) Enable Swagger middleware
 app.UseSwagger();
 app.UseSwaggerUI(c =>
 {
-    c.SwaggerEndpoint("/swagger/v1/swagger.json", "Flight API V1");
+  c.SwaggerEndpoint("/swagger/v1/swagger.json", "Flight API V1");
 });
 
-
-// 4. Sample data
+// Sample data
 var flights = new List<Flight>
 {
     new Flight {
@@ -54,6 +40,7 @@ var flights = new List<Flight>
         DepartureDate = new DateTime(2025, 05, 01, 13, 45, 00),
         Price = 209.50m
     },
+   
 };
 
 app.MapGet("/api/flights", (string departureCity, string destinationCity, DateTime flightDate) =>
@@ -62,6 +49,7 @@ app.MapGet("/api/flights", (string departureCity, string destinationCity, DateTi
         .Where(f =>
             f.DepartureCity.Equals(departureCity, StringComparison.OrdinalIgnoreCase)
             && f.DestinationCity.Equals(destinationCity, StringComparison.OrdinalIgnoreCase)
+          
             && f.DepartureDate.Date == flightDate.Date
         )
         .ToList();
@@ -71,10 +59,13 @@ app.MapGet("/api/flights", (string departureCity, string destinationCity, DateTi
         : Results.NotFound(new { Message = "No flights found for those parameters." });
 })
 .WithName("GetFlights")
-.WithOpenApi();
+.WithOpenApi();  
 
-app.MapGet("/api/all-flights", () => Results.Ok(flights))
-    .WithName("GetAllFlights")
-    .WithOpenApi();
+
+app.MapGet("/api/all-flights", () => 
+    Results.Ok(flights) 
+)
+.WithName("GetAllFlights")
+.WithOpenApi();
 
 app.Run();
